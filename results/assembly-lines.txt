@@ -1,0 +1,11 @@
+   762 asm/gcc/optbench_O0.s
+   632 asm/gcc/optbench_O1.s
+   643 asm/gcc/optbench_O2.s
+   660 asm/gcc/optbench_O3.s
+   603 asm/gcc/optbench_Os.s
+   771 asm/clang/optbench_O0.s
+   685 asm/clang/optbench_O1.s
+   680 asm/clang/optbench_O2.s
+   704 asm/clang/optbench_O3.s
+   674 asm/clang/optbench_Os.s
+  6814 итого
