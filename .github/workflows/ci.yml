@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test-lint:
+    name: Build, test and lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            gcc \
+            clang \
+            tcc \
+            cppcheck \
+            shellcheck \
+            binutils
+
+      - name: Check shell syntax
+        run: |
+          bash -n scripts/build.sh
+          bash -n scripts/benchmark.sh
+          bash -n scripts/system_info.sh
+          bash -n scripts/lint.sh
+          bash -n tests/run_tests.sh
+
+      - name: Run linters
+        run: |
+          chmod +x scripts/lint.sh
+          ./scripts/lint.sh
+
+      - name: Run build tests
+        run: |
+          chmod +x tests/run_tests.sh
+          ./tests/run_tests.sh
+
+      - name: Build GCC versions
+        run: |
+          gcc -DNO_ZERO_DIVIDE -O0 third_party/optbench.c -o /tmp/gcc_O0
+          gcc -DNO_ZERO_DIVIDE -O1 third_party/optbench.c -o /tmp/gcc_O1
+          gcc -DNO_ZERO_DIVIDE -O2 third_party/optbench.c -o /tmp/gcc_O2
+          gcc -DNO_ZERO_DIVIDE -O3 third_party/optbench.c -o /tmp/gcc_O3
+          gcc -DNO_ZERO_DIVIDE -Os third_party/optbench.c -o /tmp/gcc_Os
+
+      - name: Build Clang versions
+        run: |
+          clang -DNO_ZERO_DIVIDE -O0 third_party/optbench.c -o /tmp/clang_O0
+          clang -DNO_ZERO_DIVIDE -O1 third_party/optbench.c -o /tmp/clang_O1
+          clang -DNO_ZERO_DIVIDE -O2 third_party/optbench.c -o /tmp/clang_O2
+          clang -DNO_ZERO_DIVIDE -O3 third_party/optbench.c -o /tmp/clang_O3
+          clang -DNO_ZERO_DIVIDE -Os third_party/optbench.c -o /tmp/clang_Os
+
+      - name: Build TCC version
+        run: |
+          tcc -DNO_ZERO_DIVIDE third_party/optbench.c -o /tmp/tcc_test
+
+      - name: Generate assembly
+        run: |
+          mkdir -p /tmp/asm/gcc /tmp/asm/clang
+
+          gcc -DNO_ZERO_DIVIDE -O0 -S third_party/optbench.c -o /tmp/asm/gcc/O0.s
+          gcc -DNO_ZERO_DIVIDE -O2 -S third_party/optbench.c -o /tmp/asm/gcc/O2.s
+          gcc -DNO_ZERO_DIVIDE -Os -S third_party/optbench.c -o /tmp/asm/gcc/Os.s
+
+          clang -DNO_ZERO_DIVIDE -O0 -S third_party/optbench.c -o /tmp/asm/clang/O0.s
+          clang -DNO_ZERO_DIVIDE -O2 -S third_party/optbench.c -o /tmp/asm/clang/O2.s
+          clang -DNO_ZERO_DIVIDE -Os -S third_party/optbench.c -o /tmp/asm/clang/Os.s
