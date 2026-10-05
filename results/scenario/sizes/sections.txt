@@ -1,0 +1,52 @@
+========================================
+bitmask
+========================================
+   text	   data	    bss	    dec	    hex	filename
+   1537	    600	      8	   2145	    861	build/scenario/gcc_bitmask_O0
+   1460	    600	      8	   2068	    814	build/scenario/gcc_bitmask_O2
+   1444	    600	      8	   2052	    804	build/scenario/gcc_bitmask_Os
+   1495	    584	      8	   2087	    827	build/scenario/clang_bitmask_O0
+   1350	    584	      8	   1942	    796	build/scenario/clang_bitmask_O2
+   1330	    584	      8	   1922	    782	build/scenario/clang_bitmask_Os
+    863	    304	      0	   1167	    48f	build/scenario/tcc_bitmask_O0
+    863	    304	      0	   1167	    48f	build/scenario/tcc_bitmask_O2
+
+========================================
+ring_buffer
+========================================
+   text	   data	    bss	    dec	    hex	filename
+   2077	    608	      8	   2693	    a85	build/scenario/gcc_ring_buffer_O0
+   1767	    608	      8	   2383	    94f	build/scenario/gcc_ring_buffer_O2
+   1687	    608	      8	   2303	    8ff	build/scenario/gcc_ring_buffer_Os
+   1968	    592	      8	   2568	    a08	build/scenario/clang_ring_buffer_O0
+   1685	    592	      8	   2285	    8ed	build/scenario/clang_ring_buffer_O2
+   1582	    592	      8	   2182	    886	build/scenario/clang_ring_buffer_Os
+   1436	    314	      0	   1750	    6d6	build/scenario/tcc_ring_buffer_O0
+   1436	    314	      0	   1750	    6d6	build/scenario/tcc_ring_buffer_O2
+
+========================================
+crc32
+========================================
+   text	   data	    bss	    dec	    hex	filename
+   1866	    608	      8	   2482	    9b2	build/scenario/gcc_crc32_O0
+   2229	    608	      8	   2845	    b1d	build/scenario/gcc_crc32_O2
+   1705	    608	      8	   2321	    911	build/scenario/gcc_crc32_Os
+   1689	    584	      8	   2281	    8e9	build/scenario/clang_crc32_O0
+   1756	    584	      8	   2348	    92c	build/scenario/clang_crc32_O2
+   1562	    584	      8	   2154	    86a	build/scenario/clang_crc32_Os
+   1111	    304	      0	   1415	    587	build/scenario/tcc_crc32_O0
+   1111	    304	      0	   1415	    587	build/scenario/tcc_crc32_O2
+
+========================================
+low_pass_filter
+========================================
+   text	   data	    bss	    dec	    hex	filename
+   1558	    600	      8	   2166	    876	build/scenario/gcc_low_pass_filter_O0
+   1462	    600	      8	   2070	    816	build/scenario/gcc_low_pass_filter_O2
+   1446	    600	      8	   2054	    806	build/scenario/gcc_low_pass_filter_Os
+   1485	    584	      8	   2077	    81d	build/scenario/clang_low_pass_filter_O0
+   1396	    584	      8	   1988	    7c4	build/scenario/clang_low_pass_filter_O2
+   1335	    584	      8	   1927	    787	build/scenario/clang_low_pass_filter_Os
+    869	    306	      0	   1175	    497	build/scenario/tcc_low_pass_filter_O0
+    869	    306	      0	   1175	    497	build/scenario/tcc_low_pass_filter_O2
+

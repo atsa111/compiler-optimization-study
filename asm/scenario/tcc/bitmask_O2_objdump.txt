@@ -1,0 +1,122 @@
+
+build/scenario/tcc_bitmask_O2:     формат файла elf64-x86-64
+
+
+Дизассемблирование раздела .text:
+
+00000000004002e0 <main-0x88>:
+  4002e0:	f3 0f 1e fa          	endbr64
+  4002e4:	31 ed                	xor    ebp,ebp
+  4002e6:	49 89 d1             	mov    r9,rdx
+  4002e9:	5e                   	pop    rsi
+  4002ea:	48 89 e2             	mov    rdx,rsp
+  4002ed:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+  4002f1:	50                   	push   rax
+  4002f2:	54                   	push   rsp
+  4002f3:	45 31 c0             	xor    r8d,r8d
+  4002f6:	31 c9                	xor    ecx,ecx
+  4002f8:	48 8b 3d e9 02 20 00 	mov    rdi,QWORD PTR [rip+0x2002e9]        # 6005e8 <printf@plt+0x200160>
+  4002ff:	ff 15 eb 02 20 00    	call   QWORD PTR [rip+0x2002eb]        # 6005f0 <printf@plt+0x200168>
+  400305:	f4                   	hlt
+  400306:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+  40030d:	00 00 00 
+  400310:	f3 0f 1e fa          	endbr64
+  400314:	c3                   	ret
+  400315:	55                   	push   rbp
+  400316:	48 89 e5             	mov    rbp,rsp
+  400319:	48 81 ec 10 00 00 00 	sub    rsp,0x10
+  400320:	48 89 7d f8          	mov    QWORD PTR [rbp-0x8],rdi
+  400324:	48 89 75 f0          	mov    QWORD PTR [rbp-0x10],rsi
+  400328:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  40032b:	83 c8 08             	or     eax,0x8
+  40032e:	89 45 f8             	mov    DWORD PTR [rbp-0x8],eax
+  400331:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  400334:	83 e0 df             	and    eax,0xffffffdf
+  400337:	89 45 f8             	mov    DWORD PTR [rbp-0x8],eax
+  40033a:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  40033d:	81 f0 80 00 00 00    	xor    eax,0x80
+  400343:	89 45 f8             	mov    DWORD PTR [rbp-0x8],eax
+  400346:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  400349:	81 e0 ff f0 ff ff    	and    eax,0xfffff0ff
+  40034f:	89 45 f8             	mov    DWORD PTR [rbp-0x8],eax
+  400352:	8b 45 f0             	mov    eax,DWORD PTR [rbp-0x10]
+  400355:	83 e0 0f             	and    eax,0xf
+  400358:	c1 e0 08             	shl    eax,0x8
+  40035b:	8b 4d f8             	mov    ecx,DWORD PTR [rbp-0x8]
+  40035e:	09 c1                	or     ecx,eax
+  400360:	89 4d f8             	mov    DWORD PTR [rbp-0x8],ecx
+  400363:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  400366:	c9                   	leave
+  400367:	c3                   	ret
+
+0000000000400368 <main>:
+  400368:	55                   	push   rbp
+  400369:	48 89 e5             	mov    rbp,rsp
+  40036c:	48 81 ec 10 00 00 00 	sub    rsp,0x10
+  400373:	b8 78 56 34 12       	mov    eax,0x12345678
+  400378:	89 45 fc             	mov    DWORD PTR [rbp-0x4],eax
+  40037b:	b8 00 00 00 00       	mov    eax,0x0
+  400380:	89 45 f8             	mov    DWORD PTR [rbp-0x8],eax
+  400383:	b8 00 00 00 00       	mov    eax,0x0
+  400388:	89 45 f4             	mov    DWORD PTR [rbp-0xc],eax
+  40038b:	8b 45 f4             	mov    eax,DWORD PTR [rbp-0xc]
+  40038e:	81 f8 80 96 98 00    	cmp    eax,0x989680
+  400394:	0f 83 31 00 00 00    	jae    4003cb <main+0x63>
+  40039a:	e9 0b 00 00 00       	jmp    4003aa <main+0x42>
+  40039f:	8b 45 f4             	mov    eax,DWORD PTR [rbp-0xc]
+  4003a2:	83 c0 01             	add    eax,0x1
+  4003a5:	89 45 f4             	mov    DWORD PTR [rbp-0xc],eax
+  4003a8:	eb e1                	jmp    40038b <main+0x23>
+  4003aa:	8b 45 f4             	mov    eax,DWORD PTR [rbp-0xc]
+  4003ad:	48 89 c6             	mov    rsi,rax
+  4003b0:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  4003b3:	48 89 c7             	mov    rdi,rax
+  4003b6:	e8 5a ff ff ff       	call   400315 <main-0x53>
+  4003bb:	89 45 fc             	mov    DWORD PTR [rbp-0x4],eax
+  4003be:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  4003c1:	8b 4d fc             	mov    ecx,DWORD PTR [rbp-0x4]
+  4003c4:	31 c8                	xor    eax,ecx
+  4003c6:	89 45 f8             	mov    DWORD PTR [rbp-0x8],eax
+  4003c9:	eb d4                	jmp    40039f <main+0x37>
+  4003cb:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  4003ce:	48 89 c6             	mov    rsi,rax
+  4003d1:	48 8d 05 04 01 20 00 	lea    rax,[rip+0x200104]        # 6004dc <printf@plt+0x200054>
+  4003d8:	48 89 c7             	mov    rdi,rax
+  4003db:	b8 00 00 00 00       	mov    eax,0x0
+  4003e0:	e8 a3 00 00 00       	call   400488 <printf@plt>
+  4003e5:	b8 00 00 00 00       	mov    eax,0x0
+  4003ea:	c9                   	leave
+  4003eb:	c3                   	ret
+
+Дизассемблирование раздела .init:
+
+000000000040044c <.init>:
+  40044c:	f3 0f 1e fa          	endbr64
+  400450:	48 83 ec 08          	sub    rsp,0x8
+  400454:	48 8b 05 a5 01 20 00 	mov    rax,QWORD PTR [rip+0x2001a5]        # 600600 <printf@plt+0x200178>
+  40045b:	48 85 c0             	test   rax,rax
+  40045e:	74 02                	je     400462 <main+0xfa>
+  400460:	ff d0                	call   rax
+  400462:	48 83 c4 08          	add    rsp,0x8
+  400466:	c3                   	ret
+
+Дизассемблирование раздела .fini:
+
+0000000000400468 <.fini>:
+  400468:	f3 0f 1e fa          	endbr64
+  40046c:	48 83 ec 08          	sub    rsp,0x8
+  400470:	48 83 c4 08          	add    rsp,0x8
+  400474:	c3                   	ret
+
+Дизассемблирование раздела .plt:
+
+0000000000400478 <printf@plt-0x10>:
+  400478:	ff 35 5a 01 20 00    	push   QWORD PTR [rip+0x20015a]        # 6005d8 <printf@plt+0x200150>
+  40047e:	ff 25 5c 01 20 00    	jmp    QWORD PTR [rip+0x20015c]        # 6005e0 <printf@plt+0x200158>
+  400484:	00 00                	add    BYTE PTR [rax],al
+	...
+
+0000000000400488 <printf@plt>:
+  400488:	ff 25 6a 01 20 00    	jmp    QWORD PTR [rip+0x20016a]        # 6005f8 <printf@plt+0x200170>
+  40048e:	68 03 00 00 00       	push   0x3
+  400493:	e9 e0 ff ff ff       	jmp    400478 <main+0x110>

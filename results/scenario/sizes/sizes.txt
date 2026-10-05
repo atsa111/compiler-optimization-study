@@ -1,0 +1,48 @@
+========================================
+bitmask
+========================================
+gcc_bitmask_O0                      16008 bytes
+gcc_bitmask_O2                      15968 bytes
+gcc_bitmask_Os                      15968 bytes
+clang_bitmask_O0                    16056 bytes
+clang_bitmask_O2                    16016 bytes
+clang_bitmask_Os                    16016 bytes
+tcc_bitmask_O0                      3144 bytes
+tcc_bitmask_O2                      3144 bytes
+
+========================================
+ring_buffer
+========================================
+gcc_ring_buffer_O0                  16080 bytes
+gcc_ring_buffer_O2                  16024 bytes
+gcc_ring_buffer_Os                  16024 bytes
+clang_ring_buffer_O0                16128 bytes
+clang_ring_buffer_O2                16064 bytes
+clang_ring_buffer_Os                16064 bytes
+tcc_ring_buffer_O0                  3712 bytes
+tcc_ring_buffer_O2                  3712 bytes
+
+========================================
+crc32
+========================================
+gcc_crc32_O0                        16040 bytes
+gcc_crc32_O2                        16016 bytes
+gcc_crc32_Os                        16016 bytes
+clang_crc32_O0                      16040 bytes
+clang_crc32_O2                      16008 bytes
+clang_crc32_Os                      16008 bytes
+tcc_crc32_O0                        3392 bytes
+tcc_crc32_O2                        3392 bytes
+
+========================================
+low_pass_filter
+========================================
+gcc_low_pass_filter_O0              16008 bytes
+gcc_low_pass_filter_O2              15976 bytes
+gcc_low_pass_filter_Os              15976 bytes
+clang_low_pass_filter_O0            16056 bytes
+clang_low_pass_filter_O2            16024 bytes
+clang_low_pass_filter_Os            16024 bytes
+tcc_low_pass_filter_O0              3160 bytes
+tcc_low_pass_filter_O2              3160 bytes
+
