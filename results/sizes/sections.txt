@@ -1,0 +1,14 @@
+Executable section sizes
+========================
+   text	   data	    bss	    dec	    hex	filename
+   3760	    608	    592	   4960	   1360	build/gcc_O0
+   3273	    608	    584	   4465	   1171	build/gcc_O1
+   3183	    608	    584	   4375	   1117	build/gcc_O2
+   3228	    608	    584	   4420	   1144	build/gcc_O3
+   3021	    608	    584	   4213	   1075	build/gcc_Os
+   3492	    584	    576	   4652	   122c	build/clang_O0
+   3205	    592	    576	   4373	   1115	build/clang_O1
+   3221	    592	    576	   4389	   1125	build/clang_O2
+   3276	    592	    576	   4444	   115c	build/clang_O3
+   3029	    592	    576	   4197	   1065	build/clang_Os
+   4924	    726	    548	   6198	   1836	build/tcc

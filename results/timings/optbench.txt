@@ -1,0 +1,23 @@
+Runtime comparison
+==================
+===== gcc_O0 =====
+real=0.00 user=0.00 sys=0.00
+
+===== gcc_O2 =====
+real=0.00 user=0.00 sys=0.00
+
+===== gcc_Os =====
+real=0.00 user=0.00 sys=0.00
+
+===== clang_O0 =====
+real=0.00 user=0.00 sys=0.00
+
+===== clang_O2 =====
+real=0.00 user=0.00 sys=0.00
+
+===== clang_Os =====
+real=0.00 user=0.00 sys=0.00
+
+===== tcc =====
+real=0.00 user=0.00 sys=0.00
+

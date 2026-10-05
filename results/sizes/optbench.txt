@@ -1,0 +1,13 @@
+Executable size comparison
+==========================
+gcc_O0               16992 bytes
+gcc_O1               16992 bytes
+gcc_O2               16992 bytes
+gcc_O3               16992 bytes
+gcc_Os               16992 bytes
+clang_O0             16992 bytes
+clang_O1             17048 bytes
+clang_O2             17048 bytes
+clang_O3             17048 bytes
+clang_Os             17048 bytes
+tcc                  7624 bytes
