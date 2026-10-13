@@ -35,3 +35,6 @@ valgrind*.txt
 docs/report.pdf
 docs/report.log
 docs/report.out
+docs/brief_report.pdf
+docs/brief_report.log
+docs/brief_report.aux
