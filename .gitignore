@@ -38,3 +38,14 @@ docs/report.out
 docs/brief_report.pdf
 docs/brief_report.log
 docs/brief_report.aux
+
+# Python virtual environments and cache
+.venv/
+__pycache__/
+*.py[cod]
+
+# Generated memory benchmark executables and build logs
+results/memory-growth/*
+!results/memory-growth/memory-growth.csv
+!results/memory-growth/stack-growth.png
+!results/memory-growth/heap-requested-size.png
